@@ -5,15 +5,15 @@ this script will design the dimensions and alarm levels of
 a vertical separator according to the **PDVSA MDP-02-S-03 standard**
 
 ## Information input
-densgas=3.699 			**Gas density - Lb/ft3** 
-densliq=45.630 		**Liquid Density - Lb/ft3**
-viscogas=0.013 		**Gas viscosity -cP (Centi poise)**
-viscoliq=0.125			**Liquid Viscosity -cP (Centi poise)**
-z=0.85 						**Gas Z Factor**
-flustandgas=80 			**Standard Gas Flow - MMPCED**
-flustandliq=80 			**Liquid Flow bbl/d**
-presop=600 				**Pressure - PSIG**
-temop=50 					**Temperature - °C**
+densgas=3.699 			**Gas density - Lb/ft3** \newline
+densliq=45.630 		**Liquid Density - Lb/ft3**\newline
+viscogas=0.013 		**Gas viscosity -cP (Centi poise)**\newline
+viscoliq=0.125			**Liquid Viscosity -cP (Centi poise)**\newline
+z=0.85 						**Gas Z Factor**\newline
+flustandgas=80 			**Standard Gas Flow - MMPCED**\newline
+flustandliq=80 			**Liquid Flow bbl/d**\newline
+presop=600 				**Pressure - PSIG**\newline
+temop=50 					**Temperature - °C**\newline
 
 ## Output
 
