@@ -5,18 +5,18 @@ this script will design the dimensions and alarm levels of
 a vertical separator according to the **PDVSA MDP-02-S-03 standard**
 
 ## Information input
--densgas=3.699 			**Gas density - Lb/ft3** \newline
--densliq=45.630 		**Liquid Density - Lb/ft3**\newline
--viscogas=0.013 		**Gas viscosity -cP (Centi poise)**\newline
--viscoliq=0.125			**Liquid Viscosity -cP (Centi poise)**\newline
--z=0.85 						**Gas Z Factor**\newline
--flustandgas=80 			**Standard Gas Flow - MMPCED**\newline
--flustandliq=80 			**Liquid Flow bbl/d**\newline
--presop=600 				**Pressure - PSIG**\newline
--temop=50 					**Temperature - °C**\newline
+- densgas=3.699 			**Gas density - Lb/ft3** \newline
+- densliq=45.630 		**Liquid Density - Lb/ft3**\newline
+- viscogas=0.013 		**Gas viscosity -cP (Centi poise)**\newline
+- viscoliq=0.125			**Liquid Viscosity -cP (Centi poise)**\newline
+- z=0.85 						**Gas Z Factor**\newline
+- flustandgas=80 			**Standard Gas Flow - MMPCED**\newline
+- flustandliq=80 			**Liquid Flow bbl/d**\newline
+- presop=600 				**Pressure - PSIG**\newline
+- temop=50 					**Temperature - °C**\newline
 
 ## Output
-
+```
 Es un separador Vertical con malla, la entrada es simple con codo de 90°
 	Cada distancia esta en pulgadas y el tiempo de residencia en minutos
 	Esta basado en el manual de diseño de separadores norma PDVSA MDP-02-S-03
@@ -42,3 +42,4 @@ Es un separador Vertical con malla, la entrada es simple con codo de 90°
 	Temperatura de operacion= 57 
 	Presion de operacion= 649 
 	""")   
+```
