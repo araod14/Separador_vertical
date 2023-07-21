@@ -36,9 +36,9 @@ def run():
 	if (relamas<0.1):
 		vg=veloper(0.35,densliq,densgas)
 	elif (relamas<1 and relamas>0.1):
-		vg=veloper(0.25)
+		vg=0.25
 	else:
-		vg=veloper(0.20)
+		vg=0.20
 
 	#determinacion de area y diametro
 	dipulg=(math.ceil(((4*flujgas/vg)/3.1416)**0.5))*12
