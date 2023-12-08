@@ -1,7 +1,5 @@
 from tkinter import *
-from tkinter import messagebox
 import math
-import random
 
 
 def veloper(k,densliq,densgas):
@@ -111,45 +109,27 @@ def run():
 
     tiemopem=tiemope/60    
 
-    labeldpgas.config(text=str(dgasc))
-    labelltiempo.config(text="Tiempo " + str(tiemopem))
+    labeldpgas.config(text="Dp="+str(dgasc))
+    labelltiempo.config(text="Tiempo de \n residencia:" + str(tiemopem))
     labeldi.config(text=("D="+str(dipulg)))
     labelld.config(text="L/D="+str(rel))
     labellar.config(text="L="+str(leff))
-    labeldboqe.config(text=str(dpc))
+    labeldboqe.config(text="Dp="+str(dpc))
+    labelnaal.config(text=str(h1))
+    labelnal.config(text=str(h2))
+    labelnbl.config(text=str(h1))
+    labelnbbl.config(text=str(htanbbl))
+    labeldi.config(text="D="+str(dipulg))
+    labeldpliq.config(text="Dp="+str(dlc))
 
-
-    print("""
-	Es un separador Vertical con malla, la entrada es simple con codo de 90°
-	Cada distancia esta en pulgadas y el tiempo de residencia en minutos
-	Esta basado en el manual de diseño de separadores norma PDVSA MDP-02-S-03
-			 _______________
-			(	        )_
-			|		__  Boquilla de 
-			|		|   salida de gas:""",dgasc,"""	
-		Malla	#################    
-			|		|		          Tiempo de
-			|		|   Diametro del          residencia:""",tiemopem,""" minutos 			
-			|		|   recipiente:""",dipulg,"""	    	
-			_|		|   Altura del            Relacion L/D:""",rel,"""
-	Boquilla de   _			|   recipiente:""",leff,"""
-	entrada:""",dpc,""" 	|		|
-			|		|   Altura HHL:""",h1,"""
-			|		|   Altura HL:""",h2,"""
-			|		|   Altura LL:""",h1,"""
-			|		|_  Altura LLL:""",htanbbl,"""
-			|		__  Boquilla de
-			(_______________)   salida liquido:""",dlc,"""
-
-		Todas las distancias se muestran en pulgadas
-	Temperatura de operacion=""",temop,"""
-	Presion de operacion=""",presop,"""	
-	""")  
-
-   
+    labelmalltan.config(text="16")
+    labelboqmall.config(text="24")
+    labelmall.config(text="6")
+    labelnaalboq.config(text=str(dpc))
+  
   
 if __name__ == '__main__':
-	 # GUI
+	# GUI
     ventana=Tk()
     ventana.title("Calculo dimensiones Separador Vertical segun norma PDVSA")
     ventana.geometry("800x550")
@@ -202,16 +182,6 @@ if __name__ == '__main__':
     entryvisliq.config(width="6", bg="grey", fon=("arial",11))
     entryvisliq.place(x=390, y=170)
 
-    """
-    labeltenliq=Label(frame, text="Tension Superficial del liquido,(dinas/cm)")
-    labeltenliq.place(x=10, y=200)
-    labeltenliq.config(bg="white",fon=("arial",11))
-    entrytenliq=Entry(frame)
-    entrytenliq.pack()
-    entrytenliq.config(width="6", bg="grey", fon=("arial",11))
-    entrytenliq.place(x=390, y=200)
-    """
-
     labelfact=Label(frame, text="Factor de compresibilidad Z")
     labelfact.place(x=10, y=230)
     labelfact.config(bg="white",fon=("arial",11))
@@ -252,53 +222,26 @@ if __name__ == '__main__':
     entrytemp.config(width="6", bg="grey", fon=("arial",11))
     entrytemp.place(x=390, y=350)
 
-    #Radio Boton
-    labeltipent=Label(frame, text="Tipo de entrada")
-    labeltipent.config(bg="white",fon=("arial",11))
-    labeltipent.place(x=120,y=380)
-
-    def seleccionarentrada():
-        labeltipent.config(text=opcion.get())
-    opcion=IntVar()
-
-    radio1=Radiobutton(frame, text="Codo de 90°", variable=opcion, value=1)
-    radio1.pack()
-    radio1.config(bg="white",fon=("arial",10))
-    radio1.place(x=60,y=400)
-
-    radio2=Radiobutton(frame, text="Entrada Tangencial°", variable=opcion, value=1)
-    radio2.pack()
-    radio2.config(bg="white",fon=("arial",10))
-    radio2.place(x=180,y=400)
-
-    #Check boton
-    marcado=IntVar()
-    checkmalla=Checkbutton(frame, text="Con Malla", variable=marcado, onvalue=1, offvalue=0)
-    checkmalla.pack()
-    checkmalla.config(bg="white",fon=("arial",11))
-    checkmalla.place(x=120,y=440)
-
     #Boton correr
     boton01=Button(frame, text="Calcular", command=run)
     boton01.pack()
     boton01.config(fon=("arial",11))
     boton01.place(x=330,y=470)
 
-    a=15
     #Etiquetas de resultados
     labeldpgas=Label(frame)
     labeldpgas.config(bg="white",fon=("arial",11))
     labeldpgas.place(x=640,y=100)
 
-    labelmalltan=Label(frame, text=(a))
+    labelmalltan=Label(frame)
     labelmalltan.config(bg="white",fon=("arial",11))
     labelmalltan.place(x=520,y=187)
 
-    labelboqmall=Label(frame, text=(a))
+    labelboqmall=Label(frame)
     labelboqmall.config(bg="white",fon=("arial",11))
     labelboqmall.place(x=520,y=245)
 
-    labelmall=Label(frame, text=(a))
+    labelmall=Label(frame)
     labelmall.config(bg="white",fon=("arial",11))
     labelmall.place(x=690,y=215)
 
@@ -306,31 +249,31 @@ if __name__ == '__main__':
     labeldboqe.config(bg="white",fon=("arial",11))
     labeldboqe.place(x=473,y=279)
 
-    labelnaalboq=Label(frame, text=(a))
+    labelnaalboq=Label(frame)
     labelnaalboq.config(bg="white",fon=("arial",11))
     labelnaalboq.place(x=520,y=309)
 
-    labellar=Label(frame, text=("L=",a))
+    labellar=Label(frame)
     labellar.config(bg="white",fon=("arial",11))
     labellar.place(x=690,y=279)
 
     labelltiempo=Label(frame)
     labelltiempo.config(bg="white",fon=("arial",11))
-    labelltiempo.place(x=690,y=340)
+    labelltiempo.place(x=449,y=102)
 
-    labelnaal=Label(frame, text=(a))
+    labelnaal=Label(frame)
     labelnaal.config(bg="white",fon=("arial",9))
     labelnaal.place(x=685,y=340)
 
-    labelnal=Label(frame, text=(a))
+    labelnal=Label(frame)
     labelnal.config(bg="white",fon=("arial",9))
     labelnal.place(x=685,y=372)
 
-    labelnbl=Label(frame, text=(a))
+    labelnbl=Label(frame)
     labelnbl.config(bg="white",fon=("arial",9))
     labelnbl.place(x=685,y=392)
 
-    labelnbbl=Label(frame, text=(a))
+    labelnbbl=Label(frame,)
     labelnbbl.config(bg="white",fon=("arial",9))
     labelnbbl.place(x=685,y=412)
 
@@ -354,7 +297,7 @@ if __name__ == '__main__':
     labeldi.config(bg="white",fon=("arial",11))
     labeldi.place(x=594,y=510)
 
-    labeldpliq=Label(frame, text=("Dp=",a))
+    labeldpliq=Label(frame)
     labeldpliq.config(bg="white",fon=("arial",11))
     labeldpliq.place(x=644,y=480)
 
