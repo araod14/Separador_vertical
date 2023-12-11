@@ -1,4 +1,6 @@
 from tkinter import *
+from tkinter import font
+
 import math
 
 
@@ -141,7 +143,7 @@ if __name__ == '__main__':
 
     #Titulo
     titulo=Label(frame, text="Separador Vertical segun norma PDVSA")
-    titulo.config(bg="white",fg="red",fon=("arial black",20))
+    titulo.config(bg="white",fg="red",fon=("arial black",20,"bold"))
     titulo.place(x=80,y=15)
 
     #diagrama separador
@@ -222,11 +224,18 @@ if __name__ == '__main__':
     entrytemp.config(width="6", bg="grey", fon=("arial",11))
     entrytemp.place(x=390, y=350)
 
+    texto = "Given the following liquid and gas values, \nthis script will design the dimensions and alarm levels of \na vertical separator according to the PDVSA MDP-02-S-03 standard.\nTodos los resultados estan en pulgadas"
+
+    labelenbbl=Label(frame, text=texto)
+    labelenbbl.config(bg="white",fon=("arial",9))
+    labelenbbl.place(x=50,y=390)
+    
+
     #Boton correr
     boton01=Button(frame, text="Calcular", command=run)
     boton01.pack()
-    boton01.config(fon=("arial",11))
-    boton01.place(x=330,y=470)
+    boton01.config(fon=("arial",11,"bold"), bg="grey", fg="black")
+    boton01.place(x=250,y=470)
 
     #Etiquetas de resultados
     labeldpgas=Label(frame)
